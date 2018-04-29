@@ -1,11 +1,12 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <cstring>
 #include <omp.h>
 
 #define N 10000000
 #define MAX_RAND 1000000
-#define NUM_THREADS 4
+#define NUM_THREADS 6
 #define NUM_EXECUTIONS 5
 
 void swap(int *x,int *y) {
@@ -44,6 +45,47 @@ void quicksort(int list[],int m,int n) {
     quicksort(list, m, j-1);
     quicksort(list, j+1, n);
   }
+}
+
+int *merge(int *a1, int a1_size, int *a2, int a2_size, int *result) {
+  int i = 0, j = 0, k = 0;
+  int *L = new int[a1_size];
+  int *R = new int[a2_size];
+
+  for(int i = 0; i < a1_size; i++) {
+    L[i] = a1[i];
+  }
+
+  for(int i = 0; i < a2_size; i++) {
+    R[i] = a2[i];
+  }
+
+  while((i < a1_size) && (j < a2_size)) {
+    if(L[i] <= R[j]) {
+      result[k] = L[i];
+      i++;
+    }
+    else {
+      result[k] = R[j];
+      j++;
+    }
+    k++;
+  }
+
+  while(i < a1_size) {
+    result[k] = L[i];
+    i++;
+    k++;
+  }
+
+  while(j < a2_size) {
+    result[k] = R[j];
+    j++;
+    k++;
+  }
+
+  delete[] L;
+  delete[] R;
 }
 
 void top_quicksort(int list[],int m,int n) {
@@ -120,13 +162,27 @@ int main() {
     } while(verify(array_serial, N));
 
     start_serial[i] = clock();
-    quicksort(array_serial, 0, N);
+    quicksort(array_serial, 0, N - 1);
     stop_serial[i] = clock();
   
     start_parallel[i] = clock();
-    top_quicksort(array_parallel, 0, N);
+
+    #pragma omp parallel sections
+    {
+      #pragma omp section
+      {
+        top_quicksort(array_parallel, 0, (N / 2) - 1);
+      }
+
+      #pragma omp section
+      {
+        top_quicksort(array_parallel, N / 2, N - 1);
+      }
+    }
+
+    merge(array_parallel, N / 2, &array_parallel[N / 2], N / 2, array_parallel);
     stop_parallel[i] = clock();
-  
+
     if(verify(array_serial, N)) {
       std::cout << "[S" << i+1 << "]: Array sorted in " << ((float) stop_serial[i] - start_serial[i]) / CLOCKS_PER_SEC << " seconds.\n";
     }
