@@ -4,7 +4,7 @@
 #include <cstring>
 #include <omp.h>
 
-#define N 10000000
+#define N 100000000
 #define MAX_RAND 1000000
 #define NUM_THREADS 6
 #define NUM_EXECUTIONS 5
@@ -16,7 +16,8 @@ void swap(int *x,int *y) {
 }
 
 int choose_pivot(int i,int j ) {
-  return((i+j) / 2);
+  return (rand() % (j - i + 1)) + i;
+  //return((i+j) / 2);
 }
 
 void quicksort(int list[],int m,int n) {
