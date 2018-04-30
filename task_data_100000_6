@@ -1,0 +1,23 @@
+[S1]: Array sorted in 0.04 seconds.
+[P1]: Array sorted in 0.06 seconds.
+[S2]: Array sorted in 0.03 seconds.
+[P2]: Array sorted in 0.05 seconds.
+[S3]: Array sorted in 0.03 seconds.
+[P3]: Array sorted in 0.05 seconds.
+[S4]: Array sorted in 0.02 seconds.
+[P4]: Array sorted in 0.05 seconds.
+[S5]: Array sorted in 0.03 seconds.
+[P5]: Array sorted in 0.04 seconds.
+[S6]: Array sorted in 0.03 seconds.
+[P6]: Array sorted in 0.04 seconds.
+[S7]: Array sorted in 0.03 seconds.
+[P7]: Array sorted in 0.04 seconds.
+[S8]: Array sorted in 0.03 seconds.
+[P8]: Array sorted in 0.04 seconds.
+[S9]: Array sorted in 0.03 seconds.
+[P9]: Array sorted in 0.04 seconds.
+[S10]: Array sorted in 0.03 seconds.
+[P10]: Array sorted in 0.05 seconds.
+
+[S]: Average execution time: 0.03
+[P]: Average execution time: 0.046

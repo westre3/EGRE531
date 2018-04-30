@@ -1,0 +1,26 @@
+100,000,000 executions with 6 threads
+
+[S1]: Array sorted in 45.41 seconds.
+[P1]: Array sorted in 36.95 seconds.
+[S2]: Array sorted in 45.58 seconds.
+[P2]: Array sorted in 36.69 seconds.
+[S3]: Array sorted in 45.9 seconds.
+[P3]: Array sorted in 37.91 seconds.
+[S4]: Array sorted in 45.37 seconds.
+[P4]: Array sorted in 37.3 seconds.
+[S5]: Array sorted in 45.73 seconds.
+[P5]: Array sorted in 36.96 seconds.
+[S6]: Array sorted in 45.73 seconds.
+[P6]: Array sorted in 37.03 seconds.
+[S7]: Array sorted in 46.38 seconds.
+[P7]: Array sorted in 37.17 seconds.
+[S8]: Array sorted in 45.33 seconds.
+[P8]: Array sorted in 36.85 seconds.
+[S9]: Array sorted in 45.58 seconds.
+[P9]: Array sorted in 37.23 seconds.
+[S10]: Array sorted in 45.8 seconds.
+[P10]: Array sorted in 37.29 seconds.
+
+[S]: Average execution time: 45.681
+[P]: Average execution time: 37.138
+

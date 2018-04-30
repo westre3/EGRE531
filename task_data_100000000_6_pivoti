@@ -1,0 +1,13 @@
+[S1]: Array sorted in 44.59 seconds.
+[P1]: Array sorted in 36.35 seconds.
+[S2]: Array sorted in 44.76 seconds.
+[P2]: Array sorted in 36.21 seconds.
+[S3]: Array sorted in 44.41 seconds.
+[P3]: Array sorted in 36.17 seconds.
+[S4]: Array sorted in 45.67 seconds.
+[P4]: Array sorted in 36.79 seconds.
+[S5]: Array sorted in 44.75 seconds.
+[P5]: Array sorted in 36.2 seconds.
+
+[S]: Average execution time: 44.836
+[P]: Average execution time: 36.344
